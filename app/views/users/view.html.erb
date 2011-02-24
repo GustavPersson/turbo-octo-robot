@@ -1,2 +1,9 @@
-<h1>Users#view</h1>
-<p>Find me in app/views/users/view.html.erb</p>
+<% mUsers = User.all %>
+
+<% mUsers.each do |user| %>
+	<%= user.name %>
+<%end%>
+
+<%if mUsers.empty?%>
+	<p> No users found! </p>
+<%end%>
