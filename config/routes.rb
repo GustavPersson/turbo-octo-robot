@@ -1,4 +1,10 @@
 Kk::Application.routes.draw do
+  get "users/view"
+
+  get "users/edit"
+
+  get "users/add"
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
