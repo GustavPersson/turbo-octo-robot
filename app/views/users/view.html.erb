@@ -1,9 +1,0 @@
-<% mUsers = User.all %>
-
-<% mUsers.each do |user| %>
-	<%= user.name %>
-<%end%>
-
-<%if mUsers.empty?%>
-	<p> No users found! </p>
-<%end%>

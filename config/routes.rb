@@ -1,4 +1,8 @@
 Kk::Application.routes.draw do
+  get "users/login"
+
+  get "users/index"
+
   get "users/view"
 
   get "users/edit"
@@ -7,6 +11,8 @@ Kk::Application.routes.draw do
 
   get "welcome/index"
 
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,9 @@
+	<img src="/images/titles/users.png" />
+
+	<%@users.each do |user| %>
+		<div class="userfloat">
+			<%= link_to(image_tag("/images/none.png"), user) %>
+			<br/>
+			<%= link_to user.alias, user %> 
+		</div>
+	<% end %>	
