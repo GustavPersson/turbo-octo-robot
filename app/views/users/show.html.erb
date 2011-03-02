@@ -1,0 +1,12 @@
+
+<%if !@user.image.empty?%>
+	<%= image_tag "users/"+@user.image %>
+<%end%>
+
+<h2>
+<%= @user.alias%>
+</h2>
+<span style="font-weight: bold">Skapelsedatum: </span> <%= @user.date%> <br/>
+<span style="font-weight: bold">EmmEssEnn: </span><%= @user.msn%> <br/>
+<span style="font-weight: bold">Elektronisk post: </span><%= @user.email%> <br/>
+<span style="font-weight: bold">Beskrivning: </span><%= @user.description%> <br/>
