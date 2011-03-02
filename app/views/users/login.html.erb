@@ -1,2 +1,13 @@
-<h1>Users#login</h1>
-<p>Find me in app/views/users/login.html.erb</p>
+<% if !session[:logged:in]%>
+
+<%= form_tag :action => 'authenticate' %>
+Användarnamn:
+<%= text_field('userform', 'alias', :size => "20") %>
+<br/>
+Lösenord:
+<%= password_field("userform", 'password', :size=>"20") %>
+<br/>
+<input type="submit" value="Logga in" />
+<% else%>
+BAJS
+<% end%>
