@@ -2,8 +2,18 @@ body {
 	background: #73757b;
 	background-image: url(/images/bodybackground.png);
 	background-repeat: repeat-x;
-	font-family: Verdana;
+	font-family:"frutiger linotype","lucida grande",helvetica,arial,sans-serif;
+	text-align:center;
+	color:#333;
+	font-size: 76%;	
 }
+
+h2{
+color:#c6c65b;
+padding-top: 1em;
+font-size: 180%;
+}
+
 
 #container {
 	margin: 0 auto;
@@ -26,11 +36,11 @@ body {
 }
 
 #menu {
-	background-color: #ddd;
-	border-bottom: 1px solid black;
-	margin: 0;
-	padding: 3px;
-	text-align: right;
+  background-color: #ddd;
+  border-bottom: 1px solid black;
+  margin: 0;
+  padding: 3px;
+  text-align: right;
 }
 
 #menu ul {
@@ -44,7 +54,7 @@ body {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	padding-right: 1em;
+	padding-right: 2em;
 }
 
 #leftcontent {
