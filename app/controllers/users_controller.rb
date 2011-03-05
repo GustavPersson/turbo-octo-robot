@@ -37,11 +37,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @file = "test"
     if !session[:logged_in]
       redirect_to :action => 'login'
     end
-      
+  end
+  
+  def upload_image
+    require 'fileutils'
+    @file = params['form']['file']
+    FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")
+    redirect_to :back
   end
 
   def add

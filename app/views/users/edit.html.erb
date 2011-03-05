@@ -1,9 +1,8 @@
-<% form_for(@file, :html => {:multipart => true}) do |f| %>
+<%= form_tag( {:action => 'upload_image'}, :multipart => true) %>
 	<p>
-		<%= f.label :bild %>
-		<%= f.file_field :picture %>
+		<%# label :bild %>
+		<%= file_field "form", "file" %>
 	</p> 
 	<p>
-		<%= f.submit "Ladda Upp" %>
+		<%= submit_tag"Ladda Upp" %>
 	</p>
-<% end %>
