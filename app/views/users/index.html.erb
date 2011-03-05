@@ -6,10 +6,12 @@
 		<br/>
 		<%= link_to user.alias, user %> 
 		<%if session[:logged_in]%>
-			<% if session[:user_alias] == user.alias%>
-				<br/>
+			<% if session[:user] == user%>
+				<%= link_to "edit", edit_user_path(user) %>
+			<%elsif session[:user].privileges > 1 %>
 				<%= link_to "edit", edit_user_path(user) %>
 			<%end%>
+			<br/>
 		<%end%>
 	</div>
 <% end %>

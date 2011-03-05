@@ -1,4 +1,5 @@
 Kk::Application.routes.draw do
+  
   get "users/login"
 
   get "users/index"
@@ -11,8 +12,10 @@ Kk::Application.routes.draw do
   
   get "welcome/index"
 
+  match 'users/logout' => "users#logout"
+
   resources :users
-  
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

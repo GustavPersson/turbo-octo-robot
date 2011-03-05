@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :get_user, :only => [:show, :edit,]
+  before_filter :get_user, :only => [:show, :edit]
   before_filter :login_required, :only => [:edit, :add]
 
   def get_user
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
        @user.alias, @user.password])
       
     if valid_user
-      session[:user_alias] = valid_user.alias
+      session[:user] = valid_user
       session[:logged_in] = true
       redirect_to :action => 'login'
     else
@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   
   def logout
     session[:logged_in] = false
-    session[:user_alias] = nil
+    session[:user] = nil
+    redirect_to :action => 'login'
   end
     
   def index
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @file = "test"
     if !session[:logged_in]
       redirect_to :action => 'login'
     end

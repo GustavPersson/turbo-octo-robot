@@ -1,4 +1,4 @@
-<% if !session[:logged:in]%>
+<% if session[:logged_in] == false%>
 
 <%= form_tag :action => 'authenticate' %>
 Användarnamn:
@@ -8,6 +8,6 @@ Lösenord:
 <%= password_field("userform", 'password', :size=>"20") %>
 <br/>
 <input type="submit" value="Logga in" />
-<% else%>
-BAJS
+<% else %>
+<%= link_to "logout", :action => 'logout' %>
 <% end%>
