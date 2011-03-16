@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :get_user, :only => [:show, :edit]
+  before_filter :get_user, :only => [:show, :edit,]
   before_filter :login_required, :only => [:edit, :add]
 
   def get_user
@@ -40,12 +40,40 @@ class UsersController < ApplicationController
     if !session[:logged_in]
       redirect_to :action => 'login'
     end
+    if params['form']
+      save_edit
+    end
   end
   
   def upload_image
     require 'fileutils'
-    @file = params['form']['file']
+    @file = params['form'][:file]
+    @user = User.find(params['form'][:id])
+    if (!@user.image.empty?)
+      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}")
+    end
+    
     FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")
+    @user.update_attributes(
+    :image => @file.original_filename
+    )
+    
+    redirect_to :back
+  end
+
+  def save_edit
+    @user = User.find(params['form'][:id])
+    @form = params['form']
+    
+    @user.update_attributes(
+      :alias => @form[:alias],
+      :password => @form[:password],
+      :date => @form[:date],
+      :msn => @form[:msn],
+      :email => @form[:email],
+      :description => @form[:description]
+      )
+    
     redirect_to :back
   end
 
