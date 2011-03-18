@@ -1,5 +1,6 @@
 Kk::Application.routes.draw do
   
+
   get "users/login"
 
   get "users/index"
@@ -11,10 +12,19 @@ Kk::Application.routes.draw do
   get "users/add"
   
   get "welcome/index"
+  
+  get "pages/kinkynight"
+  
+  match 'users/:id' => "users#show"
+  match 'users/:id/edit' => 'users#edit', :as => 'edit'
+  match 'users/add' => 'users#add', :as => 'add'
+  
+  #match ':alias' => 'users#show', :as => 'kanin'
 
   match 'users/logout' => "users#logout"
-
+    
   resources :users
+  
     
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -71,6 +81,6 @@ Kk::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-   match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
   
 end

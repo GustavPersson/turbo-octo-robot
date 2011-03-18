@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:edit, :add]
 
   def get_user
-    @user = User.find(params[:id])
+    if ( params[:alias] != nil )
+      @user = User.find(:first, :conditions => ["alias = ?", params[:alias] ])
+    else
+      @user = User.find(params[:id])
+    end
   end
   
   def authenticate
@@ -55,7 +59,7 @@ class UsersController < ApplicationController
     
     FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")
     @user.update_attributes(
-    :image => @file.original_filename
+      :image => @file.original_filename
     )
     
     redirect_to :back

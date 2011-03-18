@@ -1,4 +1,9 @@
 <img src="/images/titles/users.png" />
+<br/>
+<span>
+	<%= link_to "lägg till! :D", add_path() %>
+</span>	
+<br/>
 
 <%@users.each do |user| %>
 	<div class="userfloat">
@@ -7,11 +12,11 @@
 		<%= link_to user.alias, user %> 
 		<%if session[:logged_in]%>
 			<% if session[:user] == user%>
-				<%= link_to "edit", edit_user_path(user) %>
+				<%= link_to "edit", edit_path(user) %>
 			<%elsif session[:user].privileges > 1 %>
-				<%= link_to "edit", edit_user_path(user) %>
+				<%= link_to "edit", edit_path(user) %>
 			<%end%>
 			<br/>
 		<%end%>
 	</div>
-<% end %>
+<% end %>	
