@@ -1,6 +1,10 @@
 Kk::Application.routes.draw do
   
 
+  get "pages/show"
+
+  get "pages/edit"
+
   get "users/login"
 
   get "users/index"
@@ -11,13 +15,13 @@ Kk::Application.routes.draw do
 
   get "users/add"
   
-  get "welcome/index"
-  
-  get "pages/kinkynight"
+  get "welcome/index"  
   
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'
   match 'users/add' => 'users#add', :as => 'add'
+  
+  match 'pages/:page' => "pages#show", :as => 'page'
   
   #match ':alias' => 'users#show', :as => 'kanin'
 
