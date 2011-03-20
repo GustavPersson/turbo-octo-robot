@@ -15,18 +15,18 @@ Kk::Application.routes.draw do
 
   get "users/add"
   
-  get "welcome/index"  
+  get "welcome/index"
   
+  match 'users/add' => 'users#add', :as => 'add'
+  match 'users/logout' => "users#logout"
+
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'
-  match 'users/add' => 'users#add', :as => 'add'
   
   match 'pages/:page' => "pages#show", :as => 'page'
   
   #match ':alias' => 'users#show', :as => 'kanin'
 
-  match 'users/logout' => "users#logout"
-    
   resources :users
   
     

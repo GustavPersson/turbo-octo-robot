@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :get_user, :only => [:show, :edit,]
+  before_filter :get_user, :only => [:show, :edit]
   before_filter :login_required, :only => [:edit, :add]
 
   def get_user
@@ -53,8 +53,9 @@ class UsersController < ApplicationController
     require 'fileutils'
     @file = params['form'][:file]
     @user = User.find(params['form'][:id])
+    #rescue_from här typ för o kolla om filen inte finns på filsystemet
     if (!@user.image.empty?)
-      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}")
+      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}") rescue FileNotFound
     end
     
     FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")
@@ -81,8 +82,31 @@ class UsersController < ApplicationController
     redirect_to :back
   end
 
+
   def add
+    if !session[:logged_in]
+      redirect_to :action => 'login'
+    end
+    if params['form']
+      @form = params['form']
       
+      #fixa encoding här
+      if @form[:alias].empty? || @form[:password].empty?
+        redirect_to :back, :notice => "Bade alias och losenord maste ha varden, smarto!" and return
+      end
+      
+      #lägg till user
+      User.create(
+      :alias => @form[:alias],
+      :password => @form[:password],
+      :name => @form[:name],
+      :date => @form[:date], 
+      :msn => @form[:msn],
+      :email => @form[:email],
+      :description => @form[:description]
+      )
+      redirect_to :action => 'index'
+    end
   end
   
   def login

@@ -2,9 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   def login_required
-    if session[:user]
+    if session[:logged_in]
       return true
     end
+    return false
   end
   
   def current_user

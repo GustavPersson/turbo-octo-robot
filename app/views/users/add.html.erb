@@ -1,1 +1,30 @@
-:D
+<% if flash[:warning] or flash[:notice] %>
+  <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  </div>
+  <script type="text/javascript">
+    setTimeout("new Effect.Fade('notice');", 15000)
+  </script>
+<% end %>
+
+<%= form_tag({:action => 'add'}) do %>
+
+	Namn: <br />
+	<%= text_field "form", "name" %> <br />
+	Alias: <br/>
+	<%= text_field "form", "alias"%><br />
+	Lösenord: <br />
+	<%= password_field "form", "password"%> <br />
+	Skapelsedatum: <br />
+	<%= text_field "form", "date"%><br />
+	EmmEssEnn: <br />
+	<%= text_field "form", "msn"%><br />
+	Elektronisk Post: <br />
+	<%= text_field "form", "email" %> <br />
+	Beskrivning: <br />
+	<%= text_area "form", "description"%><br/>
+	
+	<%= hidden_field "form", "id"%>
+	
+	<%= submit_tag ":d" %>
+<% end %>

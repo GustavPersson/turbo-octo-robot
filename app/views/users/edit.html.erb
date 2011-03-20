@@ -1,6 +1,6 @@
 <%= form_tag( {:action => 'upload_image'}, :multipart => true) do %>
 	<p>
-		<%if !@user.image.empty?%>
+		<%if nil != @user.image %>
 			<%= image_tag "users/"+@user.image %>
 		<%end%>
 		<br/>
