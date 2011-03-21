@@ -1,6 +1,5 @@
 Kk::Application.routes.draw do
   
-
   get "pages/show"
 
   get "pages/edit"
@@ -9,16 +8,23 @@ Kk::Application.routes.draw do
 
   get "users/index"
 
-  get "users/view"
-
   get "users/edit"
 
   get "users/add"
+
+  get "uers/upload_image"  
+
+  get "users/view"
   
   get "welcome/index"
   
   match 'users/add' => 'users#add', :as => 'add'
+  
+  match 'users/upload_image' => 'users#upload_image'
+  
   match 'users/logout' => "users#logout"
+  
+  match 'users/login' => 'users#login'
 
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'
