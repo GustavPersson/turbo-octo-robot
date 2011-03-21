@@ -9,6 +9,8 @@ gem 'rails', '3.0.4'
 
 gem 'mysql2'
 
+gem 'cells'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
