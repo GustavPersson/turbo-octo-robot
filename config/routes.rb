@@ -1,11 +1,5 @@
 Kk::Application.routes.draw do
   
-  get "notices/add"
-
-  get "notices/show"
-
-  get "notices/remove"
-
   get "pages/show"
 
   get "pages/edit"
