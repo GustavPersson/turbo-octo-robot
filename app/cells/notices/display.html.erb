@@ -1,7 +1,8 @@
-<h1>
-  Notices#display
-</h1>
-
-<p>
-  Find me in app/cells/notices/display.html.erb
-</p>
+<%@notices.each do |notice| %>
+	<p class="shortcaption">
+		<%= notice.caption %>
+	</p>
+	<p class="shortmessage">
+		<%= notice.text %>
+	</p>
+<% end %>	
