@@ -22,6 +22,8 @@ Kk::Application.routes.draw do
   
   match 'users/upload_image' => 'users#upload_image'
   
+  match 'users/authenticate' => 'users#authenticate'
+  
   match 'users/logout' => "users#logout"
   
   match 'users/login' => 'users#login'
