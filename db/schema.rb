@@ -24,15 +24,17 @@ ActiveRecord::Schema.define(:version => 20110224233255) do
   end
 
   create_table "users", :force => true do |t|
-    t.string  "name",                                     :null => false
+    t.string  "name"
     t.string  "password",                                 :null => false
     t.string  "alias",                                    :null => false
-    t.string  "image",                                    :null => false
-    t.string  "date",        :limit => 50,                :null => false
-    t.string  "msn",                                      :null => false
-    t.string  "email",                                    :null => false
-    t.text    "description",                              :null => false
+    t.string  "image"
+    t.string  "date",        :limit => 50
+    t.string  "msn"
+    t.string  "email"
+    t.text    "description"
     t.integer "privileges",  :limit => 1,  :default => 0, :null => false
   end
+
+  add_index "users", ["alias"], :name => "alias_UNIQUE", :unique => true
 
 end

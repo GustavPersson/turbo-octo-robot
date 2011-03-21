@@ -3,7 +3,7 @@ development:
   database: kk
   username: kk
   password: kaathbock
-  encoding: utf-8
+  encoding: utf8
   pool: 5
   timeout: 5000
 
@@ -15,7 +15,7 @@ test:
   database: kktest
   username: kk
   password: kaathbock
-  encoding: utf-8
+  encoding: utf8
   pool: 5
   timeout: 5000
 
@@ -24,6 +24,6 @@ production:
   database: kk
   username: kk
   password: kaathbock
-  encoding: utf-8
+  encoding: utf8
   pool: 5
   timeout: 5000
