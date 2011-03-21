@@ -1,5 +1,5 @@
 
-<%if !@user.image.empty?%>
+<%if @user.image != nil %>
 	<%= image_tag "users/"+@user.image %>
 <%end%>
 

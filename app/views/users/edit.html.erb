@@ -1,2 +1,34 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_tag( {:action => 'upload_image'}, :multipart => true) do %>
+	<p>
+		<%if nil != @user.image %>
+			<%= image_tag "users/"+@user.image %>
+		<%end%>
+		<br/>
+
+		<%= file_field "form", "file" %>
+		
+		<%= hidden_field "form", "id", "value" => @user.id %>
+	</p> 
+	<p>
+		<%= submit_tag"Ladda Upp" %>
+	</p>
+<% end %>
+
+<%= form_tag({:action => 'save_edit'}) do %>
+	Alias: <br/>
+	<%= text_field "form", "alias", "value" => @user.alias %><br />
+	Lösenord: <br />
+	<%= password_field "form", "password", "value" => @user.password %> <br />
+	Skapelsedatum: <br />
+	<%= text_field "form", "date", "value" => @user.date %><br />
+	EmmEssEnn: <br />
+	<%= text_field "form", "msn", "value" => @user.msn %><br />
+	Elektronisk Post: <br />
+	<%= text_field "form", "email", "value" => @user.email %> <br />
+	Beskrivning: <br />
+	<%= text_area "form", "description", "value" => @user.description %><br/>
+	
+	<%= hidden_field "form", "id", "value" => @user.id %>
+	
+	<%= submit_tag ":D" %>
+<% end %>
