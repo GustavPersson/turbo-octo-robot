@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     @user = User.find(params['form'][:id])
     #rescue_from här typ för o kolla om filen inte finns på filsystemet
     if (!@user.image.empty?)
-      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}") rescue FileNotFound
+      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}", :force => true) #rescue FileNotFound
     end
     
     FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")

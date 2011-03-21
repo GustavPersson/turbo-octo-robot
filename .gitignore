@@ -3,5 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/
 *.lock
-.gitignore
+*.gitignore
 *.DS_Store
+.DS_Store
