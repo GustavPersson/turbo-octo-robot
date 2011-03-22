@@ -6,7 +6,7 @@ class NoticesCell < Cell::Rails
   end
   
   def display
-    @notices = Notice.all
+    @notices = Notice.all(:order => "id DESC")
     render
   end
 

@@ -5,4 +5,8 @@
 	<p class="shortmessage">
 		<%= notice.text %>
 	</p>
-<% end %>	
+	<br/>
+	<%= link_to "delete", delete_notice_path(notice) %>
+<% end %>
+
+<%= link_to "add notice", add_notice_path %>
