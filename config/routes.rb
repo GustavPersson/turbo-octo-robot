@@ -1,5 +1,11 @@
 Kk::Application.routes.draw do
   
+  get "notices/add"
+
+  get "notices/edit"
+
+  get "notices/delete"
+
   get "pages/show"
 
   get "pages/edit"
@@ -30,6 +36,10 @@ Kk::Application.routes.draw do
 
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'
+  
+  match 'notice/add' => 'notices#add', :as => 'add_notice'
+  
+  match 'notice/:id/delete' => 'notices#delete', :as => 'delete_notice'
   
   match 'pages/:page' => "pages#show", :as => 'page'
   
