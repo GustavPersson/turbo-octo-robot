@@ -6,13 +6,13 @@ class NoticesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
+  test "should get edit" do
+    get :edit
     assert_response :success
   end
 
-  test "should get remove" do
-    get :remove
+  test "should get delete" do
+    get :delete
     assert_response :success
   end
 

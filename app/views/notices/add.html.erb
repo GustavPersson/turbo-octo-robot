@@ -1,0 +1,9 @@
+<%= form_tag({:action => 'add'}) do %>
+
+	Titel: <br />
+	<%= text_field "form", "caption" %> <br />
+	Text: <br/>
+	<%= text_area "form", "text"%><br />
+
+	<%= submit_tag ":o" %>
+<% end %>
