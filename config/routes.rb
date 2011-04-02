@@ -44,9 +44,8 @@ Kk::Application.routes.draw do
   match 'pages/quotes' => "quotes#show", :as => 'quote'
   match 'pages/quotes/add' => "quotes#add", :as => 'add_quote'
   
-  match 'pages/chronicle' => "chronicle#show"
   match 'pages/kinkynight' => "kinkynight#show"
-  match 'pages/activities' => "activities#show"
+  match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   
   #match ':alias' => 'users#show', :as => 'kanin'
 

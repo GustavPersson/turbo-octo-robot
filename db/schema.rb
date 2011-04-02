@@ -12,6 +12,10 @@
 
 ActiveRecord::Schema.define(:version => 20110224233255) do
 
+  create_table "kinkynights", :force => true do |t|
+    t.text "text", :null => false
+  end
+
   create_table "notices", :force => true do |t|
     t.string "caption", :null => false
     t.string "text",    :null => false

@@ -1,2 +1,6 @@
-<h1>Kinkynight#edit</h1>
-<p>Find me in app/views/kinkynight/edit.html.erb</p>
+<%= form_tag({:action => 'save_edit'}) do %>
+	Text: <br/>
+	<%= text_area "form", "text", "value" => @text.text %><br/>
+		
+	<%= submit_tag ":D :D :D" %>
+<% end %>
