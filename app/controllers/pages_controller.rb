@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
   #prova göra en quotes-action och se om render kör den istället för bara view.
 
-
   def edit
   end
   

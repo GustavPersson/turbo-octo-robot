@@ -1,8 +1,12 @@
 <img src="/images/titles/users.png" />
 <br/>
+<%if session[:logged_in]%>
+<%if session[:user].privileges > 1%>
 <span>
 	<%= link_to "lägg till! :D", add_path() %>
 </span>	
+<%end%>
+<%end%>
 <br/>
 
 <%@users.each do |user| %>
