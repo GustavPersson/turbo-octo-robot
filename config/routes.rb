@@ -1,14 +1,14 @@
 Kk::Application.routes.draw do
   
+  get "kinkynight/show"
+
+  get "kinkynight/edit"
+
   get "notices/add"
 
   get "notices/edit"
 
   get "notices/delete"
-
-  get "pages/show"
-
-  get "pages/edit"
 
   get "users/login"
 
@@ -41,7 +41,11 @@ Kk::Application.routes.draw do
   
   match 'notice/:id/delete' => 'notices#delete', :as => 'delete_notice'
   
-  match 'pages/:page' => "pages#show", :as => 'page'
+  match 'pages/quotes' => "quotes#show", :as => 'quote'
+  match 'pages/quotes/add' => "quotes#add", :as => 'add_quote'
+  
+  match 'pages/kinkynight' => "kinkynight#show"
+  match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   
   #match ':alias' => 'users#show', :as => 'kanin'
 

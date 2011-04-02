@@ -1,0 +1,11 @@
+<div id="contentdiv">
+
+<img src="/images/titles/quotes.png" />
+
+<% @quotes.each do |quote| %>
+<div class="user">
+<h4><%= User.find(quote.user_id).alias %></h4>
+<p>	<%= quote.text %> </p>
+</div>
+<% end%>
+</div>
