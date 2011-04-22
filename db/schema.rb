@@ -23,8 +23,13 @@ ActiveRecord::Schema.define(:version => 20110402141646) do
   end
 
   create_table "quotes", :force => true do |t|
+<<<<<<< HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+    t.string "user_alias", :limit => 35, :null => false
+    t.text   "text",                     :null => false
+>>>>>>> 02e467f68efbf57e6e14bba18a6b9c6c5bc554fd
   end
 
   create_table "users", :force => true do |t|

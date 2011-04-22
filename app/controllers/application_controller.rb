@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
   def login_required
-    if session[:logged_in]
-      return true
+    if !session[:logged_in]
+      redirect_to login_path() and return
     end
-    return false
   end
   
   def current_user
@@ -15,4 +14,5 @@ class ApplicationController < ActionController::Base
   def is_logged_in
     return session[:logged_in]
   end
+  
 end

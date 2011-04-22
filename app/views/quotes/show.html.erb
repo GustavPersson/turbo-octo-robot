@@ -3,9 +3,17 @@
 <img src="/images/titles/quotes.png" />
 
 <% @quotes.each do |quote| %>
-<div class="user">
-<h4><%= User.find(quote.user_id).alias %></h4>
-<p>	<%= quote.text %> </p>
+	<div class="user">
+	<h4><%= quote.user_alias%></h4>
+	<p>	<%= quote.text %> </p>
+	</div>
+<%end%>
 </div>
-<% end%>
-</div>
+
+<%if session[:logged_in]%>
+	<%if session[:user].privileges > 1%>
+		<span>
+			<%= link_to "lägg till! :D", add_quote_path() %>
+		</span>	
+		<%end%>
+<%end%>
