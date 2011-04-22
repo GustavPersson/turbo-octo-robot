@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
   def add
     if !session[:logged_in]
-      redirect_to :action => 'login'
+      redirect_to :action => 'login' and return
     end
     if params['form']
       @form = params['form']

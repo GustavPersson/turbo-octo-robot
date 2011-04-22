@@ -21,10 +21,9 @@ ActiveRecord::Schema.define(:version => 20110224233255) do
     t.string "text",    :null => false
   end
 
-  create_table "quotes", :id => false, :force => true do |t|
-    t.integer "id",      :null => false
-    t.integer "user_id", :null => false
-    t.text    "text",    :null => false
+  create_table "quotes", :force => true do |t|
+    t.string "user_alias", :limit => 35, :null => false
+    t.text   "text",                     :null => false
   end
 
   create_table "users", :force => true do |t|

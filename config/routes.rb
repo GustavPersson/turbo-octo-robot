@@ -32,7 +32,7 @@ Kk::Application.routes.draw do
   
   match 'users/logout' => "users#logout"
   
-  match 'users/login' => 'users#login'
+  match 'users/login' => 'users#login', :as => 'login'
 
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'

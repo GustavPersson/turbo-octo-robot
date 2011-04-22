@@ -1,0 +1,17 @@
+<div id="contentdiv">
+<p>
+	HAR NÅN SAGT NÅTT ROLIGT?! :D
+</p>
+
+<%= form_tag({:action =>'store_quote'}) do %>
+
+	Vem sa det?! <br/>
+	<%= text_field "form", "alias" %> <br/>
+	Vad sa han/hon/det!? <br />
+	<%= text_area "form", "quote" %> <br/>
+
+	<%= submit_tag "yaay!" %>
+
+<%end%>
+
+</div>
