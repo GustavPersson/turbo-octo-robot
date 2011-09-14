@@ -1,3 +1,4 @@
+<%if !@user.nil? %>
 
 <%if !@user.image.nil? %>
 	<%= image_tag "users/"+@user.image %>
@@ -10,3 +11,5 @@
 <span style="font-weight: bold">EmmEssEnn: </span><%= @user.msn%> <br/>
 <span style="font-weight: bold">Elektronisk post: </span><%= @user.email%> <br/>
 <span style="font-weight: bold">Beskrivning: </span><%= raw @user.description%> <br/>
+
+<%end%>

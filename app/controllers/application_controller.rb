@@ -12,7 +12,11 @@ class ApplicationController < ActionController::Base
   end
   
   def is_logged_in
-    return session[:logged_in]
+    if session[:logged_in].nil?
+      return false
+    else
+      return session[:logged_in]
+    end
   end
   
 end

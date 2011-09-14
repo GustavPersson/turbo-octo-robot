@@ -37,7 +37,9 @@ class UsersController < ApplicationController
   end
   
   def show
-      
+      if @user.nil?
+        render :status => 404
+      end
   end
 
   def edit
@@ -109,6 +111,7 @@ class UsersController < ApplicationController
   end
   
   def login
+    @is_logged_in = is_logged_in
   end
 
 end

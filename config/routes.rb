@@ -47,7 +47,7 @@ Kk::Application.routes.draw do
   match 'pages/kinkynight' => "kinkynight#show"
   match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   
-  #match ':alias' => 'users#show', :as => 'kanin'
+  match ':alias' => 'users#show', :as => 'kanin'
 
   resources :users
   

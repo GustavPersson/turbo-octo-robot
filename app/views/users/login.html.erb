@@ -1,4 +1,4 @@
-<% if session[:logged_in] == false%>
+<% if !@is_logged_in%>
 
 <%= form_tag :action => 'authenticate' %>
 Användarnamn:
