@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def kv_required
+    
+  end
+  
   def current_user
     return session[:user]
   end

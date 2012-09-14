@@ -1,0 +1,131 @@
+body {
+	background: #73757b;
+	font-family:"frutiger linotype","lucida grande",helvetica,arial,sans-serif;
+	text-align:center;
+	color:#333;
+	font-size: 76%;	
+}
+
+body.wall {
+	background-image: url('/images/brick.jpeg');
+}
+
+h2 {
+color:#c6c65b;
+padding-top: 1em;
+font-size: 180%;
+}
+
+h4 {
+color:#c6c65b;
+padding-top: 0.5em;
+padding-bottom: 0em;
+font-size: 120%;
+}
+
+#container {
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 780px;
+	padding: 0;
+}
+
+#content {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	border-bottom: 1px solid black;
+	margin: 0;
+	padding: 0;
+	height: 65px;
+	background-image: url();
+}
+
+#menu {
+  background-color: #ddd;
+  border-bottom: 1px solid black;
+  margin: 0;
+  padding: 3px;
+  text-align: right;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu li {
+	display: inline;
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-right: 2em;
+}
+
+#leftcontent {
+	background-color: #eee;
+	float: left;
+	width: 176px;
+	height: 100%;
+}
+
+#rightcontent {
+	float: right;
+	width: 580px;
+	background-color: black;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: #eee;
+	margin: 2px;
+	padding: 10px;
+	text-align: left;
+}
+
+#footer {
+	clear: both;
+	background-color: #eee;
+}
+
+.shortcaption {
+	background-color: black;
+	color: white;
+	margin: 2px;
+	padding: 3px;
+}
+
+div.spacer {
+	clear: both;
+}
+
+div.userfloat {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 135px;
+}
+
+div.userfloat p {
+	text-align: center;
+}
+
+div.userfloat a {
+	color: #fff;
+}
+
+a.gallery {
+	color: #fff;
+}
+
+div.hintspacer {
+	height: 190px;
+}
+
+div.hint {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}

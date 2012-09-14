@@ -1,0 +1,16 @@
+<%@notices.each do |notice| %>
+	<p class="shortcaption">
+		<%= notice.caption %>
+	</p>
+	<p class="shortmessage">
+		<%= notice.text %>
+	</p>
+	<br/>
+	<%#= link_to "delete", delete_notice_path(notice) %>
+<% end %>
+
+<%if session[:logged_in]%>
+<%if session[:user].privileges > 1%>
+<%= link_to "add notice", add_notice_path %>
+<%end%>
+<%end%>
