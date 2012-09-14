@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
   
   def show
-      if @user.nil?
+      if @user.nil? 
         render :status => 404
       end
   end

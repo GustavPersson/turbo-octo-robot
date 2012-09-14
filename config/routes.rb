@@ -24,6 +24,11 @@ Kk::Application.routes.draw do
   
   get "welcome/index"
   
+  get "khaatha_vagarbetare/login"
+
+  match 'kv'      => 'KhaathaVagarbetare#login'
+  match 'kv/wall' => 'KhaathaVagarbetare#wall'
+  
   match 'users/add' => 'users#add', :as => 'add'
   
   match 'users/upload_image' => 'users#upload_image'
@@ -48,6 +53,8 @@ Kk::Application.routes.draw do
   match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   
   match ':alias' => 'users#show', :as => 'kanin'
+  
+  
 
   resources :users
   

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KK</title>
+  <%= stylesheet_link_tag "kv.css" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body class="wall">
+	<div id="container">
+		<div id="content">			
+				<%= yield %>
+		</div>
+	</div>
+</body>
+</html>
