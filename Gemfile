@@ -1,15 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '= 3.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
 
-gem 'mysql2', '0.2.7'
+gem 'mysql2'
 
 gem 'cells'
+
+group :assets do
+  gem 'coffee-rails', "~> 3.2.1"
+  gem 'uglifier', ">= 1.0.3"
+
+  gem 'less-rails'
+  gem 'less-rails-bootstrap'
+end
+# jQuery is the default JavaScript library in Rails 3.1
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
