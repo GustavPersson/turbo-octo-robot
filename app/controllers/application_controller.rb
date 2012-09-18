@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :populate_notices
 
   def login_required
     if !session[:logged_in]
@@ -21,6 +22,11 @@ class ApplicationController < ActionController::Base
     else
       return session[:logged_in]
     end
+  end
+  
+  protected
+  def populate_notices
+    @notices = Notice.limit(8).order("id DESC")
   end
   
 end
