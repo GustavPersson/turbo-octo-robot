@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KK</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-	<div id="container">
-		<div id="content">
-			<div id="header"></div>
-			<div id="menu">
-					<ul>
-						<li>
-							<a href="/" >Start</a>
-						</li>
-						<li>
-							<a href="/pages/kinkynight" >Kinky Night!</a>
-						</li>
-						<li>
-							<a href="/pages/chronicle" >Könikan</a>
-						</li>
-						<li>
-							<a href="/users/index" >Vilka är vi</a>
-						</li>
-						<li>
-							<a href="/pages/activities" >Aktiviteter</a>
-						</li>
-						<li>
-							<a href="/pages/gallery" >Galleri</a>
-						</li>
-						<li>
-							<a href="/pages/quotes" >Citat</a>
-						</li>
-						<li>
-							<a href="/users/login" >Inloggning</a>
-						</li>
-					</ul>
-				</div>
-			
-			<div id="leftcontent">
-				<%= render_cell :notices, :display %>
-			</div>
-			<div id="rightcontent">
-				<% if flash[:warning] or flash[:notice] %>
-				  <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-				    <%= flash[:warning] || flash[:notice] %>
-				  </div>
-				  <script type="text/javascript">
-				    setTimeout("new Effect.Fade('notice');", 15000)
-				  </script>
-				<% end %>
-				<%= yield %>
-			</div>
-			<div id="footer">
-				<p>Föllöv ze veit rabbit!</p>
-			</div>
-		</div>
-	</div>
-</body>
+  <head>
+    <title>KK</title>
+  	  <%= stylesheet_link_tag    "application", :media => "all" %>
+  	  <%= javascript_include_tag "application" %>
+  	  <%= csrf_meta_tags %>
+  	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse">
+            <!-- .nav, .navbar-search, .navbar-form, etc -->
+            <ul class="nav">
+              <li>
+                <a href="/" >Start</a>
+              </li>
+              <li>
+                <a href="/pages/kinkynight" >Kinky Night!</a>
+              </li>
+              <li>
+                <a href="/pages/chronicle" >Könikan</a>
+              </li>
+              <li>
+                <a href="/users/index" >Vilka är vi</a>
+              </li>
+              <li>
+                <a href="/pages/activities" >Aktiviteter</a>
+              </li>
+              <li>
+                <a href="/pages/gallery" >Galleri</a>
+              </li>
+              <li>
+                <a href="/pages/quotes" >Citat</a>
+              </li>
+              <li>
+                <a href="/users/login" >Inloggning</a>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span2">
+            <%= render "layouts/notices" %>
+          </div>
+          <div class="span10 rightcontent">
+          <% if flash[:warning] or flash[:notice] %>
+          <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+              <%= flash[:warning] || flash[:notice] %>
+          </div>
+          <script type="text/javascript">
+              setTimeout("new Effect.Fade('notice');", 15000)
+          </script>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+      <div id="footer">
+        <p>Föllöv ze veit rabbit!</p>
+      </div>
+    </div>
+  </body>
 </html>
