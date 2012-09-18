@@ -41,5 +41,8 @@ module Kk
     
     config.assets.enabled = true
     config.assets.version = 1.0
+        #Use Less as asset thing
+    config.app_generators.stylesheet_engine :less
+
   end
 end
