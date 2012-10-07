@@ -45,6 +45,6 @@ module Kk
     config.app_generators.stylesheet_engine :less
     
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end
