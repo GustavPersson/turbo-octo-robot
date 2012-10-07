@@ -728,7 +728,7 @@ div.userfloat a{color:#fff;}
 a.gallery{color:#fff;}
 div.hintspacer{height:190px;}
 div.hint{width:100%;margin:0 auto;text-align:center;}
-@font-face{font-family:"Lucida Blackletter";src:url(/assets/lucidablack.eot);src:url(/assets/lucidablack.ttf) format('truetype');font-weight:normal;font-style:normal;}body{background:#73757b;background-image:url(/assets/bodybackground.png);background-repeat:repeat-x;text-align:center;color:#333;padding:40px;}
+@font-face{font-family:"Lucida Blackletter";src:url(/assets/lucidablack-92f6a2e95a65aa81bb7be7e1d96505ea.eot);src:url(/assets/lucidablack-13790529f898ceaebf7cce7990c1b914.ttf) format('truetype');font-weight:normal;font-style:normal;}body{background:#73757b;background-image:url(/assets/bodybackground-1741b5bce3ee787ca14dd51cb900b448.png);background-repeat:repeat-x;text-align:center;color:#333;padding:40px;}
 h1{color:white;font-family:"Lucida Blackletter";text-decoration:underline;font-weight:lighter;}
 h2{color:#c6c65b;padding-top:1em;font-size:180%;font-family:"Lucida Blackletter";}
 h4{color:#c6c65b;padding-top:0.5em;padding-bottom:0em;font-size:120%;font-family:"Lucida Blackletter";}
@@ -739,8 +739,8 @@ h4{color:#c6c65b;padding-top:0.5em;padding-bottom:0em;font-size:120%;font-family
 .centered{text-align:center;}
 .leftcontent{background-color:#eee;}
 .shortcaption{background-color:black;color:white;margin:2px;padding:3px;}
-.shortmessage{background-color:#e9e5e9;background-image:url(/assets/newsbackground.png);background-repeat:repeat-x;margin:2px;padding:3px;}
-.rightcontent{text-align:left;background-color:black;padding-left:0;margin-left:0;color:#ffffff;}.rightcontent .content-background{background-image:url(/assets/kklogodark.png);background-repeat:no-repeat;background-position:center center;}
+.shortmessage{background-color:#e9e5e9;background-image:url(/assets/newsbackground-f115eb6fa63f2d50a09b782c01cd463b.png);background-repeat:repeat-x;margin:2px;padding:3px;}
+.rightcontent{text-align:left;background-color:black;padding-left:0;margin-left:0;color:#ffffff;}.rightcontent .content-background{background-image:url(/assets/kklogodark-2fd30858b0fc95561178f5f119a76ff6.png);background-repeat:no-repeat;background-position:center center;}
 .rightcontent #user-content .title{font-weight:bolder;}
 .rightcontent #edit-user{padding:5px;}
 .rightcontent span{color:#ffffff;}

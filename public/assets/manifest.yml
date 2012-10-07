@@ -1,5 +1,8 @@
 ---
-lucidablack.ttf: lucidablack-13790529f898ceaebf7cce7990c1b914.ttf
+lucidablack-webfont.eot: lucidablack-webfont-5de03d7e81545b789ba4b3de0ed073ef.eot
+lucidablack-webfont.svg: lucidablack-webfont-d97f2d7752aac239988268fd902aa55b.svg
+lucidablack-webfont.ttf: lucidablack-webfont-b41f13f3e2b4864e5bb71e0610e72c1b.ttf
+lucidablack-webfont.woff: lucidablack-webfont-27633500549ff50c5d9973c1ab7ce4cb.woff
 bodybackground.png: bodybackground-1741b5bce3ee787ca14dd51cb900b448.png
 brick.jpeg: brick-adaf72715c8159ae42749eee449349e3.jpeg
 header.png: header-7e6dc29f49ef4de2f4e9265778129293.png
@@ -57,7 +60,7 @@ users/tuutle.jpg: users/tuutle-009f0d4d4074d97b4239e52962bbeaa2.jpg
 users/winnie.jpg: users/winnie-d86a305436a247ce6f0e3b026e16707e.jpg
 users/yoda.jpg: users/yoda-22f0a6fef9459a7bd97658381d988000.jpg
 application.js: application-bc03704f625b29cf233e287a6e8263e2.js
-application.css: application-0170bb48c1f3217683014ee492579424.css
+application.css: application-674c8a3e781306db1c0d527f632cfa5a.css
 twitter/bootstrap/glyphicons-halflings-white.png: twitter/bootstrap/glyphicons-halflings-white-13553a5bf21ae3cc374006592488ec64.png
 twitter/bootstrap/glyphicons-halflings.png: twitter/bootstrap/glyphicons-halflings-ab3144065a860d198f1d7d9a4882640c.png
 fontawesome-webfont.eot: fontawesome-webfont-7cf1b0de49e2f8672c9ad6d9e382115f.eot
