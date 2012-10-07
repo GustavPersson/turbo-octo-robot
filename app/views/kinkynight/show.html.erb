@@ -1,9 +1,8 @@
-<div id="contentdiv">
-    <p align="center"></p>
-<img src="/images/titles/kinkynight2009.png" />
-<%= raw @text.text%>
-<br/>
-<% if session[:logged_in]%>
-	<%= link_to "dags för ny kn!?:D", edit_kinkynight_path()%>
-<%end%>
+<div id="kinkynight" class="content-background">
+  <p align="center"></p>
+  <%= raw @text.text%>
+  <br/>
+  <% if session[:logged_in]%>
+    <%= link_to "dags för ny kn!?:D", edit_kinkynight_path(), :class=>"btn btn-success"%>
+  <%end%>
 </div>

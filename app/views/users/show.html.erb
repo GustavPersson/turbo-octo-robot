@@ -1,15 +1,19 @@
+<div id="user-content" class="content-background">
 <%if !@user.nil? %>
 
 <%if !@user.image.nil? %>
-	<%= image_tag "users/"+@user.image %>
+	<%= image_tag "users/"+@user.image, :class => "img-polaroid" %>
 <%end%>
 
 <h2>
 <%= @user.alias%>
 </h2>
-<span style="font-weight: bold">Skapelsedatum: </span> <%= @user.date%> <br/>
-<span style="font-weight: bold">EmmEssEnn: </span><%= @user.msn%> <br/>
-<span style="font-weight: bold">Elektronisk post: </span><%= @user.email%> <br/>
-<span style="font-weight: bold">Beskrivning: </span><%= raw @user.description%> <br/>
+
+<span class="title">Skapelsedatum:</span> <span><%= @user.date %></span> <br/>
+<span class="title">EmmEssEnn: </span> <span><%= @user.msn%> </span> <br/>
+<span class="title">Elektronisk post: </span> <span><%= @user.email%></span> <br/>
+<span class="title">Beskrivning: </span> <span><%= raw @user.description%></span> <br/>
 
 <%end%>
+
+</div>

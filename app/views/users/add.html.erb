@@ -1,5 +1,5 @@
+<div class="content-background add-user">
 <%= form_tag({:action => 'add'}) do %>
-
 	Namn: <br />
 	<%= text_field "form", "name" %> <br />
 	Alias: <br/>
@@ -17,5 +17,6 @@
 	
 	<%= hidden_field "form", "id"%>
 	
-	<%= submit_tag ":d" %>
+	<%= submit_tag ":d", :class => "btn btn-large btn-primary" %>
 <% end %>
+</div>

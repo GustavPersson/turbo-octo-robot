@@ -43,6 +43,8 @@ module Kk
     config.assets.version = 1.0
         #Use Less as asset thing
     config.app_generators.stylesheet_engine :less
+    
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   end
 end

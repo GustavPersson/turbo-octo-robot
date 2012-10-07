@@ -1,26 +1,31 @@
-<img src="/images/titles/users.png" />
-<br/>
-<%if session[:logged_in]%>
-<%if session[:user].privileges > 1%>
-<span>
-	<%= link_to "lägg till! :D", add_path() %>
-</span>	
-<%end%>
-<%end%>
-<br/>
-
-<%@users.each do |user| %>
-	<div class="userfloat">
-		<%= link_to(image_tag("/images/none.png"), user) %>
-		<br/>
-		<%= link_to user.alias, user %> 
-		<%if session[:logged_in]%>
-			<% if session[:user] == user%>
-				<%= link_to "edit", edit_path(user) %>
-			<%elsif session[:user].privileges > 1 %>
-				<%= link_to "edit", edit_path(user) %>
-			<%end%>
-			<br/>
-		<%end%>
-	</div>
-<% end %>	
+<div id="users" class="content-background">
+  <%= image_tag "titles/users.png" %>
+  <br/>
+  <%if session[:logged_in]%>
+  <%if session[:user].privileges > 1%>
+  <span>
+  	<%= link_to "lägg till! :D", add_path(), :class => "btn btn-success" %>
+  </span>	
+  <%end%>
+  <%end%>
+  <br/>
+  <%@users.each_slice(4) do |slice| %>
+    <div class="row-fluid userrow">
+      <% slice.each do |user| %>
+        <div class="span3 centered">
+          <%= link_to(image_tag("none.png"), user) %>
+          <br/>
+          <%= link_to user.alias, user %> 
+          <%if session[:logged_in]%>
+            <% if session[:user] == user%>
+              <%= link_to ":>", edit_path(user), :class => "btn btn-mini btn-info" %>
+            <%elsif session[:user].privileges > 1 %>
+              <%= link_to ":>", edit_path(user), :class => "btn btn-mini" %>
+            <%end%>
+            <br/>
+          <%end%>
+        </div>
+      <% end %>
+    </div>
+  <%end%>
+</div>
