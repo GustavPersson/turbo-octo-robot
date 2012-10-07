@@ -1,3 +1,4 @@
+<div id="edit-user">
 <%= form_tag( {:action => 'upload_image'}, :multipart => true) do %>
 	<p>
 		<%if nil != @user.image %>
@@ -10,25 +11,30 @@
 		<%= hidden_field "form", "id", "value" => @user.id %>
 	</p> 
 	<p>
-		<%= submit_tag"Ladda Upp" %>
+		<%= submit_tag "Ladda Upp", :class => "btn btn-info" %>
 	</p>
 <% end %>
 
 <%= form_tag({:action => 'save_edit'}) do %>
 	Alias: <br/>
-	<%= text_field "form", "alias", "value" => @user.alias %><br />
+	<%= text_field "form", "alias", :value => @user.alias %><br />
 	Lösenord: <br />
-	<%= password_field "form", "password", "value" => @user.password %> <br />
+	<%= password_field "form", "password", :value => @user.password %> <br />
 	Skapelsedatum: <br />
-	<%= text_field "form", "date", "value" => @user.date %><br />
+	<%= text_field "form", "date", :value => @user.date %><br />
 	EmmEssEnn: <br />
-	<%= text_field "form", "msn", "value" => @user.msn %><br />
+	<%= text_field "form", "msn", :value => @user.msn %><br />
 	Elektronisk Post: <br />
-	<%= text_field "form", "email", "value" => @user.email %> <br />
+	<%= text_field "form", "email", :value => @user.email %> <br />
 	Beskrivning: <br />
-	<%= text_area "form", "description", "value" => @user.description %><br/>
+	<%= text_area "form", "description", :value => @user.description %><br/>
 	
-	<%= hidden_field "form", "id", "value" => @user.id %>
+	<% if session[:user].privileges > 1 %>
+	 Privs: <br />
+	 <%= text_field "form", "privileges", :value => @user.privileges %>
+	<%end%>
+	
+	<%= hidden_field "form", "id", :value => @user.id %>
 	
 	<%= submit_tag ":D", :class => "btn btn-primary btn-large btn-block" %>
-<% end %>
+<% end %></div>

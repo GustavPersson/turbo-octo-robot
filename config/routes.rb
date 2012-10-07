@@ -30,6 +30,7 @@ Kk::Application.routes.draw do
   match 'kv/wall' => 'KhaathaVagarbetare#wall'
   
   match 'users/add' => 'users#add', :as => 'add'
+  match 'users/save_edit' => 'users#save_edit'
   
   match 'users/upload_image' => 'users#upload_image'
   
@@ -53,8 +54,6 @@ Kk::Application.routes.draw do
   match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   
   match ':alias' => 'users#show', :as => 'kanin'
-  
-  
 
   resources :users
   
@@ -114,6 +113,6 @@ Kk::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  #match ':controller(/:action(/:id(.:format)))'
   
 end

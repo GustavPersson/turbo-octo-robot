@@ -56,10 +56,10 @@ class UsersController < ApplicationController
     @file = params['form'][:file]
     @user = User.find(params['form'][:id])
     if (!@user.image.empty?)
-      FileUtils.remove("#{RAILS_ROOT}/public/images/users/#{@user.image}", :force => true)
+      FileUtils.remove("#{RAILS_ROOT}/assets/images/users/#{@user.image}", :force => true)
     end
     
-    FileUtils.copy(@file.path, "#{RAILS_ROOT}/public/images/users/#{@file.original_filename}")
+    FileUtils.copy(@file.path, "#{RAILS_ROOT}/assets/images/users/#{@file.original_filename}")
     @user.update_attributes(
       :image => @file.original_filename
     )
@@ -79,6 +79,7 @@ class UsersController < ApplicationController
       :email => @form[:email],
       :description => @form[:description]
       )
+    @user.save!
     
     redirect_to :back
   end
