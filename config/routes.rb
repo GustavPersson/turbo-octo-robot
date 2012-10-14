@@ -1,9 +1,5 @@
 Kk::Application.routes.draw do
   
-  get "kinkynight/show"
-
-  get "kinkynight/edit"
-
   get "notices/add"
 
   get "notices/edit"
@@ -52,6 +48,7 @@ Kk::Application.routes.draw do
   
   match 'pages/kinkynight' => "kinkynight#show"
   match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
+  match 'pages/kinkynight/save_edit' => "kinkynight#save_edit"
   
   match ':alias' => 'users#show', :as => 'kanin'
 
