@@ -20,6 +20,11 @@ Kk::Application.routes.draw do
   
   get "welcome/index"
   
+  get "pages/chronicle"
+  get "pages/activities"
+  get "pages/gallery"
+  
+  
   get "khaatha_vagarbetare/login"
 
   match 'kv'      => 'KhaathaVagarbetare#login'
@@ -49,6 +54,8 @@ Kk::Application.routes.draw do
   match 'pages/kinkynight' => "kinkynight#show"
   match 'pages/kinkynight/edit' => "kinkynight#edit", :as => 'edit_kinkynight'
   match 'pages/kinkynight/save_edit' => "kinkynight#save_edit"
+  
+  
   
   match ':alias' => 'users#show', :as => 'kanin'
 
