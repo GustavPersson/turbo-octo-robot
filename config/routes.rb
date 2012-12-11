@@ -1,7 +1,5 @@
 Kk::Application.routes.draw do
   
-  get "notices/add"
-
   get "notices/edit"
 
   get "notices/delete"
@@ -31,7 +29,7 @@ Kk::Application.routes.draw do
   match 'kv/wall' => 'KhaathaVagarbetare#wall'
   
   match 'users/add' => 'users#add', :as => 'add'
-  match 'users/save_edit' => 'users#save_edit'
+  match 'users/save_edit' => 'users#save_edit', :as => 'save_user_edit'
   
   match 'users/upload_image' => 'users#upload_image'
   
@@ -44,7 +42,7 @@ Kk::Application.routes.draw do
   match 'users/:id' => "users#show"
   match 'users/:id/edit' => 'users#edit', :as => 'edit'
   
-  match 'notice/add' => 'notices#add', :as => 'add_notice'
+  match 'notices/add' => 'notices#add', :as => 'add_notice'
   
   match 'notice/:id/delete' => 'notices#delete', :as => 'delete_notice'
   
