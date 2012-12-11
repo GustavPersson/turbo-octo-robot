@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224233255) do
+ActiveRecord::Schema.define(:version => 20121211194450) do
 
   create_table "kinkynights", :force => true do |t|
     t.text "text", :null => false
@@ -28,14 +29,17 @@ ActiveRecord::Schema.define(:version => 20110224233255) do
 
   create_table "users", :force => true do |t|
     t.string  "name"
-    t.string  "password",                                 :null => false
-    t.string  "alias",                                    :null => false
+    t.string  "password",                                        :null => false
+    t.string  "alias",                                           :null => false
     t.string  "image"
-    t.string  "date",        :limit => 50
+    t.string  "date",               :limit => 50
     t.string  "msn"
     t.string  "email"
     t.text    "description"
-    t.integer "privileges",  :limit => 1,  :default => 0, :null => false
+    t.integer "privileges",         :limit => 1,  :default => 0, :null => false
+    t.string  "photo_file_name"
+    t.integer "photo_file_size"
+    t.string  "photo_content_type"
   end
 
   add_index "users", ["alias"], :name => "alias_UNIQUE", :unique => true

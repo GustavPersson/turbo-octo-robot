@@ -51,36 +51,13 @@ class UsersController < ApplicationController
     end
   end
   
-  def upload_image
-    require 'fileutils'
-    @file = params['form'][:file]
-    @user = User.find(params['form'][:id])
-    if (!@user.image.empty?)
-      FileUtils.remove("#{RAILS_ROOT}/assets/images/users/#{@user.image}", :force => true)
-    end
-    
-    FileUtils.copy(@file.path, "#{RAILS_ROOT}/assets/images/users/#{@file.original_filename}")
-    @user.update_attributes(
-      :image => @file.original_filename
-    )
-    
-    redirect_to :back
-  end
-
   def save_edit
-    @user = User.find(params['form'][:id])
-    @form = params['form']
+    @user = User.find(params['user'][:id])
     
-    @user.update_attributes(
-      :alias => @form[:alias],
-      :password => @form[:password],
-      :date => @form[:date],
-      :msn => @form[:msn],
-      :email => @form[:email],
-      :description => @form[:description]
-      )
+    @user.update_attributes(params[:user])
     @user.save!
     
+    #TODO: Fixa meddelande vid redirect.
     redirect_to :back
   end
 

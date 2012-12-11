@@ -17,6 +17,9 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'less-rails'
 gem 'less-rails-bootstrap'
 
+#Gem for image handling
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

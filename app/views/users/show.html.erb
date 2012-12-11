@@ -1,8 +1,8 @@
 <div id="user-content" class="content-background">
 <%if !@user.nil? %>
 
-<%if !@user.image.nil? %>
-	<%= image_tag "users/"+@user.image, :class => "img-polaroid" %>
+<%if !@user.photo.nil? %>
+	<%= image_tag @user.photo.url, :class => "img-polaroid" %>
 <%end%>
 
 <h2>
