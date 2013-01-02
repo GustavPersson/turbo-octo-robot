@@ -21,7 +21,7 @@ Kk::Application.routes.draw do
   get "pages/chronicle"
   get "pages/activities"
   get "pages/gallery"
-  
+  get "pages/irc"
   
   get "khaatha_vagarbetare/login"
 
